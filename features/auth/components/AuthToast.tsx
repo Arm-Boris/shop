@@ -4,9 +4,10 @@ import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { useCustomToast } from '@/hooks/useCustomToast';
-import clsx from 'clsx';
+import { cn } from '@/lib/utils';
 
-export const Toast = () => {
+
+export const AuthToast = () => {
   const [mounted, SetMounted] = React.useState(false);
   const { text, variant } = useCustomToast(state => state);
 
@@ -32,8 +33,8 @@ export const Toast = () => {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.3, type: 'spring', bounce: 0.25 }}
-            className={clsx(
-              'min-w-60 max-w-[500px] px-4 py-2.5 text-xl bg-white rounded absolute start-1/2 -translate-x-1/2 grid place-content-center shadow-md ring-2',
+            className={cn(
+              'min-w-60 max-w-[500px] px-4 py-2.5 text-xl bg-white rounded absolute top-0 start-1/2 -translate-x-1/2 grid place-content-center shadow-md ring-2',
               { 'ring-yellow-500 text-yellow-500': variant === 'warning' },
               { 'ring-red-500 text-red-500': variant === 'error' },
               { 'ring-green-500 text-green-500': variant === 'success' }
@@ -44,7 +45,7 @@ export const Toast = () => {
         )}
       </AnimatePresence>,
       document.body,
-      'toast-1'
+      'auth-toast'
     )
   );
 };

@@ -19,9 +19,9 @@ export const SignupForm = () => {
 
   useEffect(() => {
     setErrors(state.errors);
-    if (state.message) {
-      setText(state.message, 'warning');
-      router.push('/auth/login');
+    if (state.success) {
+      setText('Регистрация прошла успешно!', 'success');
+      router.push('/auth/sign-in');
     }
   }, [state]);
 

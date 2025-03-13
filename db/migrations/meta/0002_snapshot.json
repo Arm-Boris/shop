@@ -1,6 +1,6 @@
 {
-  "id": "4ca00256-b25d-4f7b-a4ab-7bbd2a372df5",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "5d0ca98c-70cf-4f0c-94da-93ac8831577f",
+  "prevId": "437f6dde-84f3-4230-8976-0d0966517fe2",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -47,7 +47,7 @@
         },
         "role": {
           "name": "role",
-          "type": "role",
+          "type": "user_role",
           "typeSchema": "public",
           "primaryKey": false,
           "notNull": true,
@@ -513,6 +513,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "delivered": {
           "name": "delivered",
           "type": "boolean",
@@ -572,8 +578,8 @@
     }
   },
   "enums": {
-    "public.role": {
-      "name": "role",
+    "public.user_role": {
+      "name": "user_role",
       "schema": "public",
       "values": [
         "user",

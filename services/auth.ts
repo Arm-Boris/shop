@@ -1,4 +1,4 @@
-import NextAuth, { AuthError } from 'next-auth';
+import NextAuth from 'next-auth';
 import bcrypt from 'bcryptjs';
 import Google from 'next-auth/providers/google';
 import Credentials from 'next-auth/providers/credentials';
@@ -39,7 +39,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     authorized: ({ auth, request: { nextUrl } }) => {
       const isAdmin = auth?.user?.role === 'admin';
       const isLoggedIn = !!auth?.user;
-      const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
+      const isOnDashboard = nextUrl.pathname.startsWith('/admin');
       const isAuthRoute = nextUrl.pathname.startsWith('/auth');
 
       if (isOnDashboard) {
@@ -62,7 +62,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       const searchParams = url.split('?').pop();
       const callbackUrl = new URLSearchParams(searchParams).get('callbackUrl');
       if (callbackUrl != null) return callbackUrl;
-      if (url.endsWith('auth/login')) return baseUrl;
+      if (url.endsWith('auth/sign-in')) return baseUrl;
       if (url.startsWith('/')) return `${baseUrl}${url}`;
       if (new URL(url).origin === baseUrl) return url;
       return baseUrl;

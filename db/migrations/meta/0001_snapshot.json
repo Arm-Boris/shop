@@ -1,6 +1,6 @@
 {
-  "id": "4ca00256-b25d-4f7b-a4ab-7bbd2a372df5",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "437f6dde-84f3-4230-8976-0d0966517fe2",
+  "prevId": "4ca00256-b25d-4f7b-a4ab-7bbd2a372df5",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -512,6 +512,12 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
         },
         "delivered": {
           "name": "delivered",

@@ -8,12 +8,13 @@
     "start": "next start",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.8.0",
     "@neondatabase/serverless": "^0.10.4",
+    "@plaiceholder/next": "^3.0.0",
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
@@ -26,6 +27,7 @@
     "motion": "^12.4.13",
     "next": "15.2.2-canary.6",
     "next-auth": "5.0.0-beta.25",
+    "plaiceholder": "^3.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.0.2",
